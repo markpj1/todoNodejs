@@ -2,7 +2,7 @@ var Todos = require('../models/todoModel');
 
 module.exports = function(app) {
     app.get('/api/setupTodos', function (req, res) {
-        //seed data 
+        //seed database
         var starterTodo = [
          {
              username: 'test',
@@ -34,5 +34,5 @@ module.exports = function(app) {
         Todos.create(starterTodo, function (err, results) {
             res.send(results);
         });
-    })
-}
+    });
+};
